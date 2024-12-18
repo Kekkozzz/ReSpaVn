@@ -1,5 +1,6 @@
 export async function getGenres() {
     const response = await fetch(`${import.meta.env.VITE_BASE_URL}genres?key=${import.meta.env.VITE_API_KEY}`);
+    // console.log("Fetching URL:", url)
     const json = await response.json();
     return json.results;
 }

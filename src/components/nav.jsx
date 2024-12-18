@@ -26,7 +26,7 @@ export default function Nav() {
                         <ul className="dropdown-menu">
                             {genres.map((genre) => (
                                 <li key={genre.id}>
-                                    <Link to={`/games/${genre.slug}`} className="dropdown-item">{genre.name}</Link>
+                                    <Link to={`/${genre.slug}`} className="dropdown-item">{genre.name}</Link>
                                 </li>
                             ))}
                         </ul>

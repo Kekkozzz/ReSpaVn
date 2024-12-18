@@ -14,6 +14,8 @@ export default function RenderCards() {
             setGames(json.results);
             // console.log(json.results);
             setLoading(false);
+            
+            console.log(games);
         }
         getGames();
     }, []);
@@ -46,41 +48,44 @@ export default function RenderCards() {
                     {games.map(game => (
                         <div className="col-12 col-md-6 d-flex justify-content-center my-3" key={game.id}>
                             <div className="card border-0 zoom-in">
+                                <Link to={`/${game.genres[0].slug}/${game.id}`} className="text-decoration-none">
                                 <img src={game.background_image} alt="{game.name}" className="card-img-top" />
                                 <div className="card-body bg-secondario text-light">
                                     <h5 className="card-title">{game.name}</h5>
                                     <em>
-                                        <Link to={`/games/${game.genres[0].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[0].name}</Link>
+                                        <Link to={`/${game.genres[0].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[0].name}</Link>
                                     </em>
                                     {game.genres[1] &&
                                         <span>
                                             <em>
                                                 <span className="acc-primario"> | </span>
-                                                <Link to={`/games/${game.genres[1].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[1].name}</Link>
+                                                <Link to={`/${game.genres[1].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[1].name}</Link>
                                             </em>
-                                        </span> 
+                                        </span>
                                     }
                                     {game.genres[2] &&
                                         <span>
                                             <em>
                                                 <span className="acc-primario"> | </span>
-                                                <Link to={`/games/${game.genres[2].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[2].name}</Link>
+                                                <Link to={`/${game.genres[2].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[2].name}</Link>
                                             </em>
-                                        </span> 
+                                        </span>
                                     }
                                     {game.genres[3] &&
                                         <span>
                                             <em>
                                                 <span className="acc-primario"> | </span>
-                                                <Link to={`/games/${game.genres[3].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[3].name}</Link>
+                                                <Link to={`/${game.genres[3].slug}`} className="text-decoration-none acc-primario hover-primario">{game.genres[3].name}</Link>
                                             </em>
-                                        </span>                                            
+                                        </span>
                                     }
                                 </div>
+                                </Link>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
         </>
-)}
+    )
+}

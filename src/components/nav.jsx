@@ -1,13 +1,23 @@
 import { NavLink, Link } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
+import supabase from "../supabase/client";
+import { useContext } from "react";
+import SessionContext from "../context/SessionContext";
 export default function Nav() {
+    const session = useContext(SessionContext);
+    const logout = async () => {
+        const { error } = await supabase.auth.signOut()
+        if (error) {
+            alert(error)
+        }
+    }
     const { genres, platforms } = useLoaderData();
     // console.log({ genres, platforms });
     return (
         <>
-            <nav className="container-fluid navbar navbar-expand-lg bg-secondario border-bottom border-body px-5 py-3 sticky-top" data-bs-theme="dark">
+            <nav className="container-fluid navbar navbar-expand-lg border-body px-5 pt-4 " data-bs-theme="dark">
 
-                <Link to="/" className="navbar-brand fs-3 px-5">ReSpaVn</Link>
+                <Link to="/" className="navbar-brand fw-bold fs-3 px-5">ReSpaVn</Link>
 
                 <form className="d-flex mx-auto" role="search" style={{ width: "40%" }}>
                     <input className="form-control me-2" type="search" placeholder="Cerca il tuo gioco" aria-label="Search"></input>
@@ -44,9 +54,17 @@ export default function Nav() {
                             ))}
                         </ul>
                     </li>
-                    <li>
-                        <NavLink to="/signin" className="nav-link px-3">Registrati/Accedi</NavLink>
-                    </li>
+                    {session ?
+                        <li>
+                            <button className="nav-link px-3 text-warning" onClick={logout}>Esci</button>
+                        </li>
+                        :
+                        <li>
+                            <NavLink to="/register" className="nav-link px-3">Registrati/Accedi</NavLink>
+                        </li>
+                    }
+
+
                 </ul>
 
             </nav>

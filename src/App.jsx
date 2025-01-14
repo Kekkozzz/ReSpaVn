@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from './routes/Routes';
+import SessionContextProvider from "./context/SessionContextProvider";
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <SessionContextProvider>
+      <RouterProvider router={router} />
+    </SessionContextProvider>
   );
 }
 

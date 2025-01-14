@@ -60,6 +60,13 @@ h6 {
     font-weight: 300;
 }
 
+.card-img-top {
+    width: 100%;           
+    height: auto;          
+    aspect-ratio: 16 / 9;  
+    object-fit: cover;     
+}
+
 /* CSS LOADER WELCOME*/
 .loader {
     --path: #2f3545;
@@ -258,3 +265,8 @@ h6 {
 }
 
 /* FINE ANIMAZIONE CARD FETCH */
+
+
+
+
+

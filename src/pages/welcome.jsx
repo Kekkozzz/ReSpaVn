@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import React from "react";
 import Nav from "../components/nav"
 import RenderCards from "../components/renderCards";
+
 
 export default function Welcome() {
     return (

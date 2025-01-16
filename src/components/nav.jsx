@@ -1,5 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
+import SearchGame from "./searchGame";
 import supabase from "../supabase/client";
 import { useContext } from "react";
 import SessionContext from "../context/SessionContext";
@@ -15,18 +16,11 @@ export default function Nav() {
     // console.log({ genres, platforms });
     return (
         <>
-            <nav className="container-fluid navbar navbar-expand-lg border-body px-5 pt-4 " data-bs-theme="dark">
+            <nav className="container-fluid navbar navbar-expand-lg border-body px-5 pt-4 mb-2" data-bs-theme="dark">
 
                 <Link to="/" className="navbar-brand fw-bold fs-3 px-5">ReSpaVn</Link>
 
-                <form className="d-flex mx-auto" role="search" style={{ width: "40%" }}>
-                    <input className="form-control me-2" type="search" placeholder="Cerca il tuo gioco" aria-label="Search"></input>
-                    <div style={{ position: "relative" }}>
-                        <button className="btn " type="submit" style={{ position: "absolute", right: "8px" }}>
-                            <i className="bi bi-search"></i>
-                        </button>
-                    </div>
-                </form>
+                <SearchGame />
 
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 pe-5">
                     <li className="nav-item dropdown px-3">

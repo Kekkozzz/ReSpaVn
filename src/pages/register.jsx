@@ -45,7 +45,7 @@ export default function Register() {
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <Toaster richColors />
                 </form>
-                <Link to="/login" className="navbar-brand fw-bold fs-3 d-flex justify-content-end">Login</Link>
+                <Link to="/login" className="navbar-brand fw-bold fs-3 d-flex justify-content-end mt-5">Clicca qui per il login!</Link>
             </div>
         </>
     )

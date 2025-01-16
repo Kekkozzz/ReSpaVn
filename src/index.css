@@ -61,10 +61,10 @@ h6 {
 }
 
 .card-img-top {
-    width: 100%;           
-    height: auto;          
-    aspect-ratio: 16 / 9;  
-    object-fit: cover;     
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 /* CSS LOADER WELCOME*/
@@ -235,6 +235,7 @@ h6 {
         opacity: 1;
     }
 }
+
 /* FINE CSS LOADER WELCOME*/
 
 /* ANIMAZIONE CARD FETCH */
@@ -267,6 +268,66 @@ h6 {
 /* FINE ANIMAZIONE CARD FETCH */
 
 
+/* Form Nav */
 
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 780px;
+}
 
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.7s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+
+.form__field:focus {
+    font-weight: 700;
+    border-image: linear-gradient(to right, #dfb600, #df9100);
+    border-image-slice: 1;
+    transition: 1s ease-in;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.5s;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+/* FINE FORM NAV */
 

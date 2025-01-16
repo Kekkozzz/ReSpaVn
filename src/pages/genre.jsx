@@ -28,7 +28,7 @@ export default function Genre() {
                 <div className="row">
 
                     {loading ? (
-                        <div className="fade-in">
+                        <div className="fade-in mt-3">
                             <div className="col-12 d-flex justify-content-center">
                                 <div className="loader">
                                     <svg viewBox="0 0 80 80">

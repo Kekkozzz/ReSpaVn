@@ -22,11 +22,11 @@ export default function RenderCards() {
     }, [page]);
     return (
         <>
-            <div className="container mt-2">
+            <div className="container mt-4">
                 <div className="row">
 
                     {loading &&
-                        <div className="col-12 d-flex justify-content-center fade-in">
+                        <div className="col-12 d-flex justify-content-center fade-in mt-3">
                             <div className="loader">
                                 <svg viewBox="0 0 80 80">
                                     <circle r="32" cy="40" cx="40" id="test"></circle>

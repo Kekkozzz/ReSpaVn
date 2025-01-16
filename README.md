@@ -1,8 +1,36 @@
-# React + Vite
+    Proposta di Consegna
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    Descrizione
 
-Currently, two official plugins are available:
+Libreria di Videogiochi 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    API
+
+https://api.rawg.io/api/
+
+    Stile
+
+CSS + Bootstrap 5.3
+
+    Pagine
+
+Pagina 1 - Home page con lista prodotti
+Pagina 2 - Pagina dettaglio prodotto
+Pagina 3 - Pagina Generi
+Pagina 4 - Pagina Piattaforme
+Pagina 5 - Pagina Registrazione utente
+Pagina 6 - Pagina Login utente
+
+    User Interactions
+
+Utente non autenticato puo scrollare sui giochi in piattaforma
+Utente non autenticato puo filtrare per nome del gioco
+Utente non autenicato puo registrarsi con email e password in piattaforma
+
+    Context
+    
+Il contesto condivide i dati della sessione dell'utente a tutte le pagine
+
+    Deployment
+
+https://respavn-francesco-romitos-projects.vercel.app/

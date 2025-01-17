@@ -92,14 +92,14 @@ export default function RenderCards() {
                             {page !== 1 &&
                                 <div className="col-6">
                                     <button className="btn btn-light" onClick={() => setPage(page - 1)}>
-                                        Via indietro
+                                        Vai indietro
                                     </button>
                                 </div>
                             }
                             {page == 1 &&
                                 <div className="col-12 col-6 d-flex justify-content-end">
                                     <button className="btn btn-light" onClick={() => setPage(page + 1)}>
-                                        Via avanti
+                                        Vai avanti
                                     </button>
                                 </div>
                             }
@@ -108,7 +108,7 @@ export default function RenderCards() {
                                 
                                 <div className="col-6 d-flex justify-content-end">
                                     <button className="btn btn-light" onClick={() => setPage(page + 1)}>
-                                        Via avanti
+                                        Vai avanti
                                     </button>
                                 </div>
                                 

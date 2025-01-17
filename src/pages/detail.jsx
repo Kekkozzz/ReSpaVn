@@ -46,19 +46,19 @@ export default function Detail() {
                     <div className="col-lg-3">
                         <div>
                             {game.esrb_rating && game.esrb_rating.id === 3 &&
-                            <img src="../../public/images/Teen.png" style={{ width: '100px' }} alt="Teen" />
+                            <img src="../../public/Teen.png" style={{ width: '100px' }} alt="Teen" />
                         }
                         {game.esrb_rating && game.esrb_rating.id === 4 &&
-                            <img src="../../public/images/Mature.png" style={{ width: '100px' }} alt="Mature" />
+                            <img src="../../public/Mature.png" style={{ width: '100px' }} alt="Mature" />
                         }
                         {game.esrb_rating && game.esrb_rating.id === 5 &&
-                            <img src="../../public/images/AdultsOnly.webp" style={{ width: '100px' }} alt="Adults Only" />
+                            <img src="../../public/AdultsOnly.webp" style={{ width: '100px' }} alt="Adults Only" />
                         }
                         {game.esrb_rating && game.esrb_rating.id === 6 &&
-                            <img src="../../public/images/Pending.png" style={{ width: '100px' }} alt="Pending" />
+                            <img src="../../public/Pending.png" style={{ width: '100px' }} alt="Pending" />
                         }
                         {game.esrb_rating == null &&
-                            <img src="../../public/images/Everyone.png" style={{ width: '100px' }} alt="Everyone" />
+                            <img src="../../public/Everyone.png" style={{ width: '100px' }} alt="Everyone" />
                         }
                         </div>
                         <div className="my-4">

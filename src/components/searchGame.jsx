@@ -35,7 +35,7 @@ export default function SearchGame() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     onFocus={() => setShowResults(true)}
-                    onBlur={() => setTimeout(() => setShowResults(false), 200)}
+                    onBlur={() => setTimeout(() => setShowResults(false), 50)}
                 />
                 <label htmlFor="name" className="form__label">
                     Cerca 800k+ giochi

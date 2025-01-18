@@ -6,6 +6,7 @@ import Login from "../pages/login";
 import Genre from "../pages/genre";
 import Detail from "../pages/detail";
 import Platform from "../pages/platform";
+import SearchGame from "../components/searchGame";
 
 
 const router = createBrowserRouter(

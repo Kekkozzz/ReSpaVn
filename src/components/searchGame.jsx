@@ -35,7 +35,7 @@ export default function SearchGame() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     onFocus={() => setShowResults(true)}
-                    onBlur={() => setTimeout(() => setShowResults(false), 50)}
+                    onBlur={() => setTimeout(() => setShowResults(false), 100)}
                 />
                 <label htmlFor="name" className="form__label">
                     Cerca 800k+ giochi
@@ -56,7 +56,7 @@ export default function SearchGame() {
                         {games.length > 0 ? (
                             games.map((game) => (
                                 <div key={game.id}>
-                                    <Link to={`/detail/${game.id}`} className="text-decoration-none text-white d-flex align-items-center">
+                                    <Link to={`/${game.genres[0]?.slug}/${game.id}`} className="text-decoration-none text-white d-flex align-items-center">
                                         <img
                                             src={game.background_image || "fallback-image.jpg"}
                                             alt={game.name || "Immagine del gioco"}

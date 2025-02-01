@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import supabase from "../supabase/client";
 import SessionContext from "../context/SessionContext";
+import { Link, useNavigate } from "react-router";
+
 
 export default function Profile() {
   const session = useContext(SessionContext);
@@ -99,66 +101,69 @@ export default function Profile() {
   }
 
   return (
-    <div className="container mt-4">
-      <h2>Il tuo profilo</h2>
-      <div className="profile-info mb-4">
-        <p>
-          <strong>Username:</strong> {profile.username}
-        </p>
-        <p>
-          <strong>Bio:</strong> {profile.bio}
-        </p>
-        {profile.avatar_url && (
-          <img
-            src={profile.avatar_url}
-            alt="Avatar"
-            style={{ maxWidth: "200px" }}
-          />
-        )}
+    <div className="mt-3">
+      <Link to="/" className="navbar-brand fw-bold fs-3 px-5"><i className="bi bi-arrow-left"></i> Torna alla Home</Link>
+      <div className="container mt-4">
+        <h2>Il tuo profilo</h2>
+        <div className="profile-info mb-4">
+          <p>
+            <strong>Username:</strong> {profile.username}
+          </p>
+          <p>
+            <strong>Bio:</strong> {profile.bio}
+          </p>
+          {profile.avatar_url && (
+            <img
+              src={profile.avatar_url}
+              alt="Avatar"
+              style={{ maxWidth: "200px" }}
+            />
+          )}
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              className="form-control"
+              value={profile.username || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="avatar_url" className="form-label">
+              Avatar URL
+            </label>
+            <input
+              type="text"
+              id="avatar_url"
+              name="avatar_url"
+              className="form-control"
+              value={profile.avatar_url || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="bio" className="form-label">
+              Bio
+            </label>
+            <textarea
+              id="bio"
+              name="bio"
+              className="form-control"
+              value={profile.bio || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Aggiorna profilo
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            className="form-control"
-            value={profile.username || ""}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="avatar_url" className="form-label">
-            Avatar URL
-          </label>
-          <input
-            type="text"
-            id="avatar_url"
-            name="avatar_url"
-            className="form-control"
-            value={profile.avatar_url || ""}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="bio" className="form-label">
-            Bio
-          </label>
-          <textarea
-            id="bio"
-            name="bio"
-            className="form-control"
-            value={profile.bio || ""}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Aggiorna profilo
-        </button>
-      </form>
     </div>
   );
 }

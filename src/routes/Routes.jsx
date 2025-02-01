@@ -7,6 +7,8 @@ import Genre from "../pages/genre";
 import Detail from "../pages/detail";
 import Platform from "../pages/platform";
 import SearchGame from "../components/searchGame";
+import Favorites from "../components/Favorites";
+import Profile from "../pages/Profile";
 
 
 const router = createBrowserRouter(
@@ -18,6 +20,8 @@ const router = createBrowserRouter(
         <Route path="/:genre_slug" element={<Genre />} loader={Filters}/>
         <Route path="/platform/:platform_slug" element={<Platform />} loader={Filters}/>
         <Route path="/:genre_slug/:id" element={<Detail />} loader={Filters}/>
+        <Route path="/favorites" element={<Favorites />} loader={Filters} />
+        <Route path="/profile" element ={<Profile />} loader={Filters} />
         <Route path="*" element={<h1 className="text-center">Cosa stai facendo?? ERROR 404</h1>} />
     </Route>
 

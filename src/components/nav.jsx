@@ -4,6 +4,7 @@ import SearchGame from "./searchGame";
 import supabase from "../supabase/client";
 import { useContext } from "react";
 import SessionContext from "../context/SessionContext";
+import Profile from "../pages/Profile";
 export default function Nav() {
     const session = useContext(SessionContext);
     const logout = async () => {
@@ -49,9 +50,15 @@ export default function Nav() {
                         </ul>
                     </li>
                     {session ?
+                    <div>
+
                         <li>
                             <button className="nav-link px-3 text-warning" onClick={logout}>Esci</button>
                         </li>
+                        <li>
+                            <NavLink to="/profile" className="nav-link px-3">Profilo</NavLink>
+                        </li>
+                    </div>
                         :
                         <li>
                             <NavLink to="/register" className="nav-link px-3">Registrati/Accedi</NavLink>
